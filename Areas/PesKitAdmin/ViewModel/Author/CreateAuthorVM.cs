@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PesKitTask.Areas.PesKitAdmin.ViewModel.Author
+namespace PesKitTask.Areas.PesKitAdmin.ViewModel
 {
     public class CreateAuthorVM
     {

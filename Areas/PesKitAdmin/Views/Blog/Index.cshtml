@@ -22,7 +22,7 @@
                                 Title
                             </th>
                             <th>
-                                Reply count
+                                Tag
                             </th>
                             <th>
                                 Description
@@ -46,7 +46,10 @@
                                     @blog.Title
                                 </td>
                                 <td>
-                                    @blog.CommentCount
+                                    @foreach (var blogtag in blog.BlogTags)
+                                    {
+                                        <p>@blogtag.Tag.Name</p>
+                                    }
                                 </td>
 
                                 <td>

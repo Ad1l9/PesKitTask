@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PesKitTask.Areas.PesKitAdmin.ViewModel.Author;
+using PesKitTask.Areas.PesKitAdmin.ViewModel;
 using PesKitTask.DAL;
 using PesKitTask.Models;
 
@@ -32,13 +32,13 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
 
             if(!ModelState.IsValid) return View();
 
-            bool isInclude=_context.Authors.Any(a=>a.Name == author.Name);
+            bool isInclude=await _context.Authors.AnyAsync(a=>a.Name == author.Name);
             if (isInclude)
             {
                 ModelState.AddModelError("Name","Bu Username movcuddur");
-                return View();
+                return View(vm);
             }
-            _context.Authors.Add(author);
+            _context.Authors.AddAsync(author);
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
