@@ -1,0 +1,65 @@
+﻿@model UpdateProjectVM
+@{
+	ProjectImage main = Model.ProjectImages.FirstOrDefault(pi => pi.IsPrimary == true);
+	ProjectImage hover = Model.ProjectImages.FirstOrDefault(pi => pi.IsPrimary == null);
+}
+
+<div class="content-wrapper">
+	<div class="row">
+		<div class="col-lg-12 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<form class="forms-sample" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<img style="width:170px;height:170px" src="~/assets/img/@main.ImageURL" />
+
+							<div class="form-group">
+								<label asp-for="MainPhoto">Main Image</label>
+								<input accept="image/*" asp-for="MainPhoto" class="form-control" id="MainPhoto">
+								<span class="text-danger" asp-validation-for="MainPhoto"></span>
+							</div>
+							<span class="text-danger" asp-validation-for="MainPhoto"></span>
+						</div>
+
+						<div class="form-group d-flex">
+							@foreach (ProjectImage projectImage in Model.ProjectImages.Where(pi=>pi.IsPrimary==null))
+							{
+								<div class="position-relative">
+									<img style="width:170px;height:170px" src="~/assets/img/@projectImage.ImageURL" />
+									<button style="width:50px; border-radius:50%; right:0;" class="cus-delete btn btn-danger position-absolute text-center"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z" /></svg></button>
+									<input asp-for="ImageIds" type="hidden" value="@projectImage.Id">
+								</div>
+							}
+							<div class="form-group">
+								<label asp-for="Photos">Additional Image</label>
+								<input accept="image/*" multiple asp-for="Photos" class="form-control" id="Photos">
+								<span class="text-danger" asp-validation-for="Photos"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label asp-for="Name">Name</label>
+							<input asp-for="Name" class="form-control" id="Name" placeholder="Name">
+							<span class="text-danger" asp-validation-for="Name"></span>
+						</div>
+
+						<button type="submit" class="btn btn-primary me-2">Submit</button>
+						<a asp-action="Index" class="btn btn-light">Cancel</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@section DeleteImages{
+	<script>
+		var btns = document.querySelectorAll(".cus-delete")
+		for (let i = 0; i <= btns.length; i++) {
+			btns[i].addEventListener("click", function () {
+				btns[i].parentElement.remove()
+			})
+		}
+
+	</script>
+}

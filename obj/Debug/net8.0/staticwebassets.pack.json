@@ -353,10 +353,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\3946db63-e790-4065-842f-ba5f806029a3.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\39bdc213-798d-4dae-926b-54ca0cb9bc82.png",
-      "PackagePath": "staticwebassets\\assets\\img\\39bdc213-798d-4dae-926b-54ca0cb9bc82.png"
-    },
-    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\469b221c-9daa-4962-9a26-c5f780d6d792.png",
       "PackagePath": "staticwebassets\\assets\\img\\469b221c-9daa-4962-9a26-c5f780d6d792.png"
     },
@@ -423,6 +419,10 @@
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\c11bcefb-4bd6-43f4-9c3c-103cc1e6ae72.png",
       "PackagePath": "staticwebassets\\assets\\img\\c11bcefb-4bd6-43f4-9c3c-103cc1e6ae72.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\c527f274-c6b7-4804-9a22-c3bd20e6d89e.png",
+      "PackagePath": "staticwebassets\\assets\\img\\c527f274-c6b7-4804-9a22-c3bd20e6d89e.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\carousel-1.jpg",
