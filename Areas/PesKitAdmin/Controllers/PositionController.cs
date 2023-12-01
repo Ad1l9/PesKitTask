@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using PesKitTask.Areas.PesKitAdmin.ViewModel;
 using PesKitTask.DAL;
@@ -18,7 +17,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Position> positions = new List<Position>();
+            List<Position> positions = await _context.Positions.ToListAsync();
             return View(positions);
         }
         public IActionResult Create()
@@ -28,26 +27,65 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreatePositionVM vm)
         {
-            Author author = new() { Name = vm.Name.Trim() };
+            Position position = new() { Name = vm.Name.Trim() };
 
             if (!ModelState.IsValid) return View();
 
-            bool isInclude = await _context.Positions.AnyAsync(a => a.Name == author.Name);
+            bool isInclude = await _context.Positions.AnyAsync(p => p.Name == position.Name);
             if (isInclude)
             {
-                ModelState.AddModelError("Name", "Bu Username movcuddur");
+                ModelState.AddModelError("Name", "Bu position movcuddur");
                 return View(vm);
             }
-            _context.Authors.AddAsync(author);
-            _context.SaveChanges();
+            await _context.Positions.AddAsync(position);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
 
 
-        public async Task<IActionResult> Delete(Author author)
+        public async Task<IActionResult> Delete(Position position)
         {
-            _context.Authors.Remove(author);
+            _context.Positions.Remove(position);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Update(int id)
+        {
+            if (id <= 0) return BadRequest();
+            
+            Position position = await _context.Positions.FirstOrDefaultAsync(p => p.Id == id);
+            
+            if (position is null) return NotFound();
+
+            UpdatePositionVM vm = new UpdatePositionVM()
+            {
+                Name = position.Name,
+            };
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id,UpdatePositionVM positionVM)
+        {
+            Position existed= await _context.Positions.FirstOrDefaultAsync(p=>p.Id == id);
+            if (existed is null) return NotFound();
+
+            if (!ModelState.IsValid)
+            {
+                return View(positionVM);
+            }
+
+            bool result = _context.Projects.Any(c => c.Name == positionVM.Name);
+            if (result)
+            {
+                ModelState.AddModelError("Name", "Bele position artiq movcuddur");
+            }
+
+
+            existed.Name = positionVM.Name;
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

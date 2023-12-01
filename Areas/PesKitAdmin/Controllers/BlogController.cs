@@ -119,6 +119,13 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
             return View(blogVM);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Update(int id,Position position)
+        {
+
+            return RedirectToAction(nameof(Index));
+        }
+
 
         public async Task<IActionResult> Delete(int id)
         {

@@ -341,24 +341,40 @@
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\0070ffad-2d2c-45e5-b39f-afeb8cc8bde4.png",
-      "PackagePath": "staticwebassets\\assets\\img\\0070ffad-2d2c-45e5-b39f-afeb8cc8bde4.png"
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\19d6fd0a-c95a-4c37-a3ea-f1364f173cf9.png",
+      "PackagePath": "staticwebassets\\assets\\img\\19d6fd0a-c95a-4c37-a3ea-f1364f173cf9.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\104a4c0b-49bd-4a3f-81a9-ce639f693d9a.png",
-      "PackagePath": "staticwebassets\\assets\\img\\104a4c0b-49bd-4a3f-81a9-ce639f693d9a.png"
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\223a738a-2bb9-47d6-9043-540cffb93884.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\223a738a-2bb9-47d6-9043-540cffb93884.svg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\24a3ff36-81ee-4780-b55d-4a0ec333301b.png",
+      "PackagePath": "staticwebassets\\assets\\img\\24a3ff36-81ee-4780-b55d-4a0ec333301b.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\37e406d6-8372-4bd1-9fa0-04613b7b694d.png",
+      "PackagePath": "staticwebassets\\assets\\img\\37e406d6-8372-4bd1-9fa0-04613b7b694d.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\3946db63-e790-4065-842f-ba5f806029a3.png",
       "PackagePath": "staticwebassets\\assets\\img\\3946db63-e790-4065-842f-ba5f806029a3.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\469b221c-9daa-4962-9a26-c5f780d6d792.png",
-      "PackagePath": "staticwebassets\\assets\\img\\469b221c-9daa-4962-9a26-c5f780d6d792.png"
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\417d07b2-836c-478c-99da-6215599f7239.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\417d07b2-836c-478c-99da-6215599f7239.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\41ca18b9-e98c-4053-a596-e2a8862eee15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\41ca18b9-e98c-4053-a596-e2a8862eee15.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\4ae39bef-6df4-428c-ac95-b83249c61ebf.png",
       "PackagePath": "staticwebassets\\assets\\img\\4ae39bef-6df4-428c-ac95-b83249c61ebf.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\56873560-a31b-4993-967a-bc8df77319e2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\56873560-a31b-4993-967a-bc8df77319e2.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\578a0da8-85da-4b1d-b21e-66a192bd2db3.png",
@@ -381,14 +397,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\90b2fbb7-2f15-4cac-9d19-e3b4971cec74.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\941ad9ec-2d7a-4ab8-afd9-039720d29044.svg",
-      "PackagePath": "staticwebassets\\assets\\img\\941ad9ec-2d7a-4ab8-afd9-039720d29044.svg"
-    },
-    {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\a2f4d8c7-5c91-440d-b368-cc8582831ce4.png",
-      "PackagePath": "staticwebassets\\assets\\img\\a2f4d8c7-5c91-440d-b368-cc8582831ce4.png"
-    },
-    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\about-img.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about-img.jpg"
     },
@@ -397,8 +405,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\action.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\b03af9ab-9fa7-435b-9fce-101552be3472.png",
+      "PackagePath": "staticwebassets\\assets\\img\\b03af9ab-9fa7-435b-9fce-101552be3472.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\b4f0c6b3-07b2-45bc-9b6b-959cfde5aaea.png",
       "PackagePath": "staticwebassets\\assets\\img\\b4f0c6b3-07b2-45bc-9b6b-959cfde5aaea.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\b501e14d-f5d3-4fef-894c-9ed7579971fc.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\b501e14d-f5d3-4fef-894c-9ed7579971fc.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\b9fa8656-a3ad-4262-b043-b241b2018ce9.png",
@@ -421,10 +437,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\c11bcefb-4bd6-43f4-9c3c-103cc1e6ae72.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\c527f274-c6b7-4804-9a22-c3bd20e6d89e.png",
-      "PackagePath": "staticwebassets\\assets\\img\\c527f274-c6b7-4804-9a22-c3bd20e6d89e.png"
-    },
-    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\carousel-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\carousel-1.jpg"
     },
@@ -433,12 +445,32 @@
       "PackagePath": "staticwebassets\\assets\\img\\carousel-2.jpg"
     },
     {
-      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\eacde617-fd93-4523-8041-10f98d96d8af.svg",
-      "PackagePath": "staticwebassets\\assets\\img\\eacde617-fd93-4523-8041-10f98d96d8af.svg"
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\d1f29ed0-4530-4c54-a515-77c9153eb922.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\d1f29ed0-4530-4c54-a515-77c9153eb922.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\e15c0200-6c65-4a6e-b46b-128abcc8a7eb.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\e15c0200-6c65-4a6e-b46b-128abcc8a7eb.svg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\e1c8985a-4a1b-48fc-b718-689e339faf13.png",
+      "PackagePath": "staticwebassets\\assets\\img\\e1c8985a-4a1b-48fc-b718-689e339faf13.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\e5659faf-3852-4940-9557-42d84b468b92.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\e5659faf-3852-4940-9557-42d84b468b92.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\ec800dc5-573d-44d2-9d40-810549e5c89e.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\ec800dc5-573d-44d2-9d40-810549e5c89e.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\f84e8336-23d7-4699-94fe-ae72c12c2e9d.png",
       "PackagePath": "staticwebassets\\assets\\img\\f84e8336-23d7-4699-94fe-ae72c12c2e9d.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\ffde4569-689d-4ca1-95a4-45ce0da80adb.png",
+      "PackagePath": "staticwebassets\\assets\\img\\ffde4569-689d-4ca1-95a4-45ce0da80adb.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\project-1.jpg",
