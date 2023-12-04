@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="Areas\PesKitAdmin\Data\" />
     <Folder Include="Areas\PesKitAdmin\Models\" />
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>

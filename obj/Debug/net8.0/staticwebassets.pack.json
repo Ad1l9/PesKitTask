@@ -345,12 +345,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\19d6fd0a-c95a-4c37-a3ea-f1364f173cf9.png"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\1c80b06c-f835-49b2-8066-3bfa8e63562b.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\1c80b06c-f835-49b2-8066-3bfa8e63562b.jpg"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\223a738a-2bb9-47d6-9043-540cffb93884.svg",
       "PackagePath": "staticwebassets\\assets\\img\\223a738a-2bb9-47d6-9043-540cffb93884.svg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\24a3ff36-81ee-4780-b55d-4a0ec333301b.png",
       "PackagePath": "staticwebassets\\assets\\img\\24a3ff36-81ee-4780-b55d-4a0ec333301b.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\3102bd3e-fd62-4d1d-949a-f4125c97e875.png",
+      "PackagePath": "staticwebassets\\assets\\img\\3102bd3e-fd62-4d1d-949a-f4125c97e875.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\37e406d6-8372-4bd1-9fa0-04613b7b694d.png",
@@ -385,6 +393,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\6c32c369-dff3-4cad-9006-d6860feabe4d.png"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\6c59daaa-e33c-4f0c-8832-950dc0150f28.png",
+      "PackagePath": "staticwebassets\\assets\\img\\6c59daaa-e33c-4f0c-8832-950dc0150f28.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\709bd27a-9b4b-4461-8a1b-f5af21e8402c.png",
       "PackagePath": "staticwebassets\\assets\\img\\709bd27a-9b4b-4461-8a1b-f5af21e8402c.png"
     },
@@ -395,6 +407,10 @@
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\90b2fbb7-2f15-4cac-9d19-e3b4971cec74.png",
       "PackagePath": "staticwebassets\\assets\\img\\90b2fbb7-2f15-4cac-9d19-e3b4971cec74.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\aa1a13e3-5b74-45c5-afc7-fcd09ce90e38.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\aa1a13e3-5b74-45c5-afc7-fcd09ce90e38.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\about-img.jpg",
@@ -419,6 +435,10 @@
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\b9fa8656-a3ad-4262-b043-b241b2018ce9.png",
       "PackagePath": "staticwebassets\\assets\\img\\b9fa8656-a3ad-4262-b043-b241b2018ce9.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\bca48d21-43aa-45df-8ae2-700fea5506c9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bca48d21-43aa-45df-8ae2-700fea5506c9.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\blog-1.jpg",
@@ -465,8 +485,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\ec800dc5-573d-44d2-9d40-810549e5c89e.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\eeaf811d-bb7b-4bad-aeef-6d5c5ddd5b57.png",
+      "PackagePath": "staticwebassets\\assets\\img\\eeaf811d-bb7b-4bad-aeef-6d5c5ddd5b57.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\f84e8336-23d7-4699-94fe-ae72c12c2e9d.png",
       "PackagePath": "staticwebassets\\assets\\img\\f84e8336-23d7-4699-94fe-ae72c12c2e9d.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\faad5f8a-d7f4-41e4-a5c0-f8ab4d2f2cd0.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faad5f8a-d7f4-41e4-a5c0-f8ab4d2f2cd0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\fd87afc5-ba6d-4b0a-8b1a-e4242da4b7de.png",
+      "PackagePath": "staticwebassets\\assets\\img\\fd87afc5-ba6d-4b0a-8b1a-e4242da4b7de.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\ffde4569-689d-4ca1-95a4-45ce0da80adb.png",
