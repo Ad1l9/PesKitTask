@@ -59,6 +59,24 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Update(int id)
+        {
+            if (id <= 0) return BadRequest();
+
+            Product product = await _context.Products
+                .FirstOrDefaultAsync(d => d.Id == id);
+
+
+            if (product is null) return NotFound();
+
+            UpdateProductVM depVM = new()
+            {
+                Name = product.Name,
+                Price = product.Price,
+                ImageUrl = product.ImageUrl,
+            };
+            return View(depVM);
+        }
 
     }
 }

@@ -44,7 +44,7 @@ namespace PesKitTask.Controllers
             return View(basketVM);
         }
 
-        public async Task<IActionResult> AddBasket(int id, string controllername)
+        public async Task<IActionResult> AddBasket(int id)
         {
             if (id <= 0) return BadRequest();
 
@@ -90,7 +90,7 @@ namespace PesKitTask.Controllers
 
             Response.Cookies.Append("Basket", json);
 
-            return RedirectToAction(nameof(Index), controllername);
+            return Redirect(Request.Headers["Referer"]);
 
         }
 
@@ -118,7 +118,7 @@ namespace PesKitTask.Controllers
             }
 
 
-            return RedirectToAction(nameof(Index));
+            return Redirect(Request.Headers["Referer"]);
         }
 
 
