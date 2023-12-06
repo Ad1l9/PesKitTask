@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PesKitTask.Areas.PesKitAdmin.ViewModel;
 using PesKitTask.DAL;
@@ -17,6 +18,9 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
             _context = context;
             _env = env;
         }
+
+
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Index()
         {
             List<Employee> employees = await _context.Employees.ToListAsync();

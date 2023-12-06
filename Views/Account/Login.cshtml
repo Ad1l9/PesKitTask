@@ -1,20 +1,25 @@
-﻿<!-- Register Start -->
+﻿@using PesKitTask.ViewModel
+@model LoginVM
+<!-- Register Start -->
 <div class="container-fluid py-5">
     <div class="container">
         <div class="row">
-            <div class="col-4 offset-4">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email">
+            <form method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-4 offset-4">
+                    <div class="mb-3">
+                        <label asp-for="EmailOrUsername" class="form-label">Username or Email</label>
+                        <input asp-for="EmailOrUsername" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <input asp-for="Password" type="password" class="form-control" >
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-warning w-100">Login</button>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="Password" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="Password">
-                </div>
-                <div class="mb-3">
-                    <button class="btn btn-warning w-100">Login</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

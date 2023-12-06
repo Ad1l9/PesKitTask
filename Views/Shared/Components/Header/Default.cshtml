@@ -49,8 +49,12 @@
                 <ul class="dropdown-menu">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="dropdown-item" href="#">My Account</a></li>
+                        if (!User.IsInRole("Member"))
+                        {
+                            <li><a class="dropdown-item" asp-action="Index" asp-controller="Home" asp-area="PesKitAdmin">Admin Page</a></li>
+                        }
                         <li><a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a></li>
+                        <li><a class="dropdown-item" asp-action="MyAccount" asp-controller="Account" asp-route-name="@User.Identity.Name">My account</a></li>
                     }
                     else
                     {
@@ -83,7 +87,7 @@
                     <a asp-action="RemoveBasket" asp-controller="Basket" asp-route-id="@product.Id" class="delete-button text-danger"><i class="fas fa-trash fa-fw"></i></a>
                 </li>
             }
-            
+
         </ul>
         <p>Subtotal: $@total</p>
     </div>

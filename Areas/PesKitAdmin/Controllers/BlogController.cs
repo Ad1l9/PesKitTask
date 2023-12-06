@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PesKitTask.Areas.PesKitAdmin.ViewModel;
 using PesKitTask.DAL;
@@ -20,6 +21,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Index()
         {
             List<Blog> blogs = await _context.Blogs
@@ -27,6 +29,8 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
                 .Include(b => b.Author).ToListAsync();
             return View(blogs);
         }
+
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Create()
         {
 			var vm = new CreateBlogVM
@@ -97,6 +101,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Update(int id)
         {
             if (id <= 0) return BadRequest();
@@ -127,6 +132,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0) return BadRequest();
@@ -138,6 +144,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Detail(int id)
         {
 			if (id <= 0) return BadRequest();

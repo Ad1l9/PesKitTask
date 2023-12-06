@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PesKitTask.Areas.PesKitAdmin.ViewModel;
 using PesKitTask.DAL;
@@ -18,12 +19,18 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
 			_context = context;
             _env = env;
         }
-		public async Task<IActionResult> Index() 
+
+
+        [Authorize(Roles = "Admin,Moderator")]
+        public async Task<IActionResult> Index() 
         {
 			List<Department> departmentList = await _context.Departments.Include(d=>d.Employees).ToListAsync();
             return View(departmentList);
         }
 
+
+
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Create()
         {
             return View();
@@ -62,6 +69,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,Moderator")]
         public async Task<IActionResult> Update(int id)
         {
             if (id <= 0) return BadRequest();
@@ -131,6 +139,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0) return BadRequest();

@@ -22,6 +22,8 @@ namespace PesKitTask.ViewModel
         ErrorMessage = "Email duzgun formatda deyil")]
         public string Email { get; set; }
 
+        public IFormFile? Image { get; set; }
+
 
         [Required]
         [MinLength(4, ErrorMessage = "Soyad uzunlugu 4den boyuk olmalidir")]

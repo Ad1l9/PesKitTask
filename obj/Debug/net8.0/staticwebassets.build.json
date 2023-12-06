@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EApxhNZuy2WWGBqdN83tSrtkkMUjWphla2sZMmXvNoU=",
+  "Hash": "xJxd4qVqx88YIM2E2miY0PV5peuO2I+ax7+sLxbCq3Y=",
   "Source": "PesKitTask",
   "BasePath": "_content/PesKitTask",
   "Mode": "Default",
@@ -2295,6 +2295,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\d1f29ed0-4530-4c54-a515-77c9153eb922.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\defaultpp.jpg",
+      "SourceId": "PesKitTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\",
+      "BasePath": "_content/PesKitTask",
+      "RelativePath": "assets/img/defaultpp.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\defaultpp.jpg"
     },
     {
       "Identity": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\e15c0200-6c65-4a6e-b46b-128abcc8a7eb.svg",
