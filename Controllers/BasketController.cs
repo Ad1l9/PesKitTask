@@ -90,7 +90,29 @@ namespace PesKitTask.Controllers
 
             Response.Cookies.Append("Basket", json);
 
-            return Redirect(Request.Headers["Referer"]);
+            List<BasketItem> basketVM = new();
+
+                foreach (BasketCookieItem basketCookieItem in basket)
+                {
+                    Product producte = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketCookieItem.Id);
+
+                    if (producte is not null)
+                    {
+                        BasketItem basketItem = new()
+                        {
+                            Id = producte.Id,
+                            Name = producte.Name,
+                            ImageUrl = producte.ImageUrl,
+                            Price = producte.Price,
+                            Count = basketCookieItem.Count,
+                            SubTotal = producte.Price * basketCookieItem.Count,
+                        };
+                        basketVM.Add(basketItem);
+                    }
+                }
+
+
+            return PartialView("_BasketItemPartial",basketVM);
 
         }
 

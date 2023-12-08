@@ -1,0 +1,23 @@
+﻿@using PesKitTask.ViewModel
+
+@model List<BasketItem>
+
+@{
+    decimal total = 0;
+}
+
+<ul>
+    @foreach (BasketItem basketItem in Model)
+    {
+        total += basketItem.SubTotal;
+
+        <li class="cart_product">
+            <div>
+                <p>@basketItem.Name</p>
+                <p>@basketItem.Count x $@basketItem.Price</p>
+            </div>
+            <a asp-controller="Basket" asp-action="RemoveBasket" asp-route-id="@basketItem.Id" class="delete-button text-danger"><i class="fas fa-trash fa-fw"></i></a>
+        </li>
+    }
+</ul>
+<p>Total: $@total</p>

@@ -5,7 +5,7 @@ using PesKitTask.DAL;
 using PesKitTask.Models;
 using PesKitTask.ViewModel;
 
-namespace ProniaTask.ViewComponents
+namespace PesKitTask.ViewComponents
 {
     public class HeaderViewComponent : ViewComponent
     {
@@ -44,7 +44,6 @@ namespace ProniaTask.ViewComponents
                         };
                         basketVM.Add(basketItem);
                     }
-
                 }
 
             }

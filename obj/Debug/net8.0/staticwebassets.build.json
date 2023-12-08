@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xJxd4qVqx88YIM2E2miY0PV5peuO2I+ax7+sLxbCq3Y=",
+  "Hash": "7EvNYrVus3HaOS3zPU5XYWOaxZXilFmM6/kibXlXzWQ=",
   "Source": "PesKitTask",
   "BasePath": "_content/PesKitTask",
   "Mode": "Default",
@@ -2751,6 +2751,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\testimonial-4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\js\\custom.js",
+      "SourceId": "PesKitTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\",
+      "BasePath": "_content/PesKitTask",
+      "RelativePath": "assets/js/custom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom.js"
     },
     {
       "Identity": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\js\\main.js",

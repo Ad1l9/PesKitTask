@@ -139,7 +139,6 @@ namespace PesKitTask.Controllers
         [HttpPost]
         public async Task<IActionResult> MyAccount(RegisterVM vm)
         {
-
             return View();
         }
 

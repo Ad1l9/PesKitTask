@@ -565,6 +565,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\testimonial-4.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.js"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },
