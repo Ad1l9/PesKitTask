@@ -1,5 +1,5 @@
 ﻿@using PesKitTask.ViewModel
-@model List<BasketItem>
+@model List<BasketItemVM>
 @{
     decimal total = 0;
 }
@@ -35,7 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (BasketItem item in Model)
+                            @foreach (BasketItemVM item in Model)
                             {
                                 total += item.SubTotal;
                                 <tr>
@@ -51,7 +51,7 @@
                                             <div class="d-flex">
                                                 <a class="text-danger" asp-action="Decrement" asp-controller="Basket" asp-route-id="@item.Id">-</a>
                                                     <span>@item.Count</span>
-                                                <a class="text-danger" asp-action ="AddBasket" asp-controller="Basket" asp-route-id="@item.Id">+</a>
+                                                <a class="text-danger add-to-cart" asp-action="AddBasket" asp-controller="Basket" asp-route-id="@item.Id">+</a>
                                             </div>
                                         </div>
                                     </td>
@@ -96,7 +96,7 @@
                     <ul>
                         <li>Total <span>$@total</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <a asp-action="Checkout" asp-controller="Basket" class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>

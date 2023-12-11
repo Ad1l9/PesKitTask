@@ -23,7 +23,7 @@ namespace PesKitTask.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
 
-            List<BasketItem> basketVM = new();
+            List<BasketItemVM> basketVM = new();
             if (Request.Cookies["Basket"] is not null)
             {
                 List<BasketCookieItem> basket = JsonConvert.DeserializeObject<List<BasketCookieItem>>(Request.Cookies["Basket"]);
@@ -33,7 +33,7 @@ namespace PesKitTask.ViewComponents
                     Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketCookieItem.Id);
                     if (product is not null)
                     {
-                        BasketItem basketItem = new()
+                        BasketItemVM basketItem = new()
                         {
                             Id = product.Id,
                             Name = product.Name,

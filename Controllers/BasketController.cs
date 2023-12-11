@@ -1,22 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using PesKitTask.DAL;
 using PesKitTask.Models;
 using PesKitTask.ViewModel;
+using System.Security.Claims;
 
 namespace PesKitTask.Controllers
 {
     public class BasketController : Controller
     {
         private readonly AppDbContext _context;
-        public BasketController(AppDbContext context)
+        private readonly UserManager<AppUser> _usermanager;
+
+        public BasketController(AppDbContext context, UserManager<AppUser> usermanager)
         {
             _context = context;
+            _usermanager = usermanager;
         }
         public async Task<IActionResult> Index()
         {
-            List<BasketItem> basketVM = new();
+            List<BasketItemVM> basketVM = new();
             if (Request.Cookies["Basket"] is not null)
             {
                 List<BasketCookieItem> basket = JsonConvert.DeserializeObject<List<BasketCookieItem>>(Request.Cookies["Basket"]);
@@ -26,7 +32,7 @@ namespace PesKitTask.Controllers
                     Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketCookieItem.Id);
                     if (product is not null)
                     {
-                        BasketItem basketItem = new()
+                        BasketItemVM basketItem = new()
                         {
                             Id = product.Id,
                             Name = product.Name,
@@ -51,14 +57,77 @@ namespace PesKitTask.Controllers
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
 
             if (product is null) return NotFound();
-            List<BasketCookieItem> basket;
 
-            if (Request.Cookies["Basket"] is not null)
+
+            if (User.Identity.IsAuthenticated)
             {
-                basket = JsonConvert.DeserializeObject<List<BasketCookieItem>>(Request.Cookies["Basket"]);
-                BasketCookieItem item = basket.FirstOrDefault(b => b.Id == id);
-                if (item is null)
+
+                AppUser user = await _usermanager.Users.Include(u => u.BasketItems.Where(p=>p.OrderId==null)).ThenInclude(p => p.Product).FirstOrDefaultAsync(u => u.Id == User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+                BasketItem basketItem = user.BasketItems.FirstOrDefault(bi => bi.ProductId == id);
+
+                if (basketItem is null)
                 {
+                    basketItem = new()
+                    {
+                        AppUserId = user.Id,
+                        ProductId = product.Id,
+                        Price = product.Price,
+                        Count = 1
+                    };
+                    user.BasketItems.Add(basketItem);
+                }
+                else
+                {
+                    basketItem.Count++;
+                }
+
+                List<BasketItemVM> basketVM = new();
+                foreach (BasketItem item in user.BasketItems)
+                {
+                    basketVM.Add(new()
+                    {
+                        Id = item.Id,
+                        Name = item.Product.Name,
+                        Price = item.Product.Price,
+                        ImageUrl = item.Product.ImageUrl,
+                        Count = item.Count,
+                        SubTotal = item.Count * item.Product.Price
+                    });
+
+
+                }
+
+
+                await _context.SaveChangesAsync();
+
+                return PartialView("_BasketItemPartial", basketVM);
+            }
+            else
+            {
+                List<BasketItemVM> basketVM = new();
+                List<BasketCookieItem> basket;
+                if (Request.Cookies["Basket"] is not null)
+                {
+                    basket = JsonConvert.DeserializeObject<List<BasketCookieItem>>(Request.Cookies["Basket"]);
+                    BasketCookieItem item = basket.FirstOrDefault(b => b.Id == id);
+                    if (item is null)
+                    {
+                        BasketCookieItem itemVM = new()
+                        {
+                            Id = product.Id,
+                            Count = 1
+                        };
+                        basket.Add(itemVM);
+                    }
+                    else
+                    {
+                        item.Count++;
+                    }
+                }
+                else
+                {
+                    basket = new();
                     BasketCookieItem itemVM = new()
                     {
                         Id = product.Id,
@@ -66,31 +135,11 @@ namespace PesKitTask.Controllers
                     };
                     basket.Add(itemVM);
                 }
-                else
-                {
-                    item.Count++;
-                }
-            }
-            else
-            {
-                basket = new();
-                BasketCookieItem itemVM = new()
-                {
-                    Id = product.Id,
-                    Count = 1
-                };
-                basket.Add(itemVM);
-            }
+                string json = JsonConvert.SerializeObject(basket);
+
+                Response.Cookies.Append("Basket", json);
 
 
-
-
-
-            string json = JsonConvert.SerializeObject(basket);
-
-            Response.Cookies.Append("Basket", json);
-
-            List<BasketItem> basketVM = new();
 
                 foreach (BasketCookieItem basketCookieItem in basket)
                 {
@@ -98,7 +147,7 @@ namespace PesKitTask.Controllers
 
                     if (producte is not null)
                     {
-                        BasketItem basketItem = new()
+                        BasketItemVM basketItem = new()
                         {
                             Id = producte.Id,
                             Name = producte.Name,
@@ -111,8 +160,9 @@ namespace PesKitTask.Controllers
                     }
                 }
 
+                return PartialView("_BasketItemPartial", basketVM);
 
-            return PartialView("_BasketItemPartial",basketVM);
+            }
 
         }
 
@@ -166,6 +216,26 @@ namespace PesKitTask.Controllers
                 }
             }
             return RedirectToAction(nameof(Index));
+        }
+
+
+        public async Task<IActionResult> Checkout()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                AppUser user = await _usermanager.Users
+                .Include(u => u.BasketItems.Where(u => u.OrderId == null))
+                .ThenInclude(bi => bi.Product)
+                .FirstOrDefaultAsync(u => u.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+                OrderVM orderVM = new OrderVM()
+                {
+                    BasketItems = user.BasketItems,
+                };
+                return View(orderVM);
+            }
+            else return RedirectToAction(nameof(Index), "Basket");
+
         }
     }
 }

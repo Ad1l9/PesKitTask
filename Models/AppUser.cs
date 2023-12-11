@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using PesKitTask.Utilities.Enums;
+using PesKitTask.ViewModel;
 
 namespace PesKitTask.Models
 {
@@ -9,5 +10,7 @@ namespace PesKitTask.Models
         public string Surname { get; set; }
         public Gender Gender { get; set; }
         public string ImageUrl { get; set; } = "defaultpp.jpg";
+
+        public List<BasketItem> BasketItems { get; set; }
     }
 }

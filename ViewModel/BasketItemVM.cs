@@ -1,6 +1,8 @@
-﻿namespace PesKitTask.ViewModel
+﻿using PesKitTask.Models;
+
+namespace PesKitTask.ViewModel
 {
-    public class BasketItem
+    public class BasketItemVM
     {
         public int Id { get; set; }
         public string Name { get; set; }

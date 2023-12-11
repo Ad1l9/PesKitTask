@@ -1,13 +1,13 @@
 ﻿@using PesKitTask.ViewModel
 
-@model List<BasketItem>
+@model List<BasketItemVM>
 
 @{
     decimal total = 0;
 }
 
 <ul>
-    @foreach (BasketItem basketItem in Model)
+    @foreach (BasketItemVM basketItem in Model)
     {
         total += basketItem.SubTotal;
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PesKitTask.DAL;
 
@@ -11,9 +12,11 @@ using PesKitTask.DAL;
 namespace PesKitTask.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231211080625_addOrderTable")]
+    partial class addOrderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -244,41 +247,6 @@ namespace PesKitTask.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
-                });
-
-            modelBuilder.Entity("PesKitTask.Models.BasketItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AppUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("BasketItems");
                 });
 
             modelBuilder.Entity("PesKitTask.Models.Blog", b =>
@@ -559,7 +527,7 @@ namespace PesKitTask.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("PesKitTask.ViewModel.BasketItemVM", b =>
+            modelBuilder.Entity("PesKitTask.ViewModel.BasketItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -568,6 +536,7 @@ namespace PesKitTask.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AppUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Count")
@@ -587,6 +556,9 @@ namespace PesKitTask.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("SubTotal")
                         .HasColumnType("decimal(18,2)");
 
@@ -596,7 +568,9 @@ namespace PesKitTask.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("BasketItemVM");
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketItems");
                 });
 
             modelBuilder.Entity("PesKitTask.Models.AppUser", b =>
@@ -672,31 +646,6 @@ namespace PesKitTask.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PesKitTask.Models.BasketItem", b =>
-                {
-                    b.HasOne("PesKitTask.Models.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PesKitTask.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId");
-
-                    b.HasOne("PesKitTask.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("PesKitTask.Models.Blog", b =>
                 {
                     b.HasOne("PesKitTask.Models.Author", "Author")
@@ -766,15 +715,29 @@ namespace PesKitTask.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("PesKitTask.ViewModel.BasketItemVM", b =>
+            modelBuilder.Entity("PesKitTask.ViewModel.BasketItem", b =>
                 {
-                    b.HasOne("PesKitTask.Models.AppUser", null)
+                    b.HasOne("PesKitTask.Models.AppUser", "AppUser")
                         .WithMany("BasketItems")
-                        .HasForeignKey("AppUserId");
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("PesKitTask.Models.Order", null)
+                    b.HasOne("PesKitTask.Models.Order", "Order")
                         .WithMany("BasketItems")
                         .HasForeignKey("OrderId");
+
+                    b.HasOne("PesKitTask.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("PesKitTask.Models.Author", b =>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PesKitTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+336d0af343489d058e0eb6648c240afcc1d266a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e54f89973fbbe7f14de26a934bdb06189825b30b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PesKitTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PesKitTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

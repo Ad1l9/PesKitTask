@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PesKitTask.Models;
+using PesKitTask.ViewModel;
 
 namespace PesKitTask.DAL
 {
@@ -17,6 +18,8 @@ namespace PesKitTask.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
