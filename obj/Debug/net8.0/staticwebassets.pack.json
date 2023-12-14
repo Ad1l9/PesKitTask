@@ -341,6 +341,18 @@
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\00fa764b-0c68-4389-ad48-6431e8c29048.png",
+      "PackagePath": "staticwebassets\\assets\\img\\00fa764b-0c68-4389-ad48-6431e8c29048.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\03e2eeca-4ec5-49bf-b577-57a82b1960b4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\03e2eeca-4ec5-49bf-b577-57a82b1960b4.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\137af293-ef83-4ce5-8347-eb57b95837b9.png",
+      "PackagePath": "staticwebassets\\assets\\img\\137af293-ef83-4ce5-8347-eb57b95837b9.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\19d6fd0a-c95a-4c37-a3ea-f1364f173cf9.png",
       "PackagePath": "staticwebassets\\assets\\img\\19d6fd0a-c95a-4c37-a3ea-f1364f173cf9.png"
     },
@@ -401,12 +413,28 @@
       "PackagePath": "staticwebassets\\assets\\img\\709bd27a-9b4b-4461-8a1b-f5af21e8402c.png"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\731b81f4-cc21-4db9-9b4b-cb2cd7b75a3e.png",
+      "PackagePath": "staticwebassets\\assets\\img\\731b81f4-cc21-4db9-9b4b-cb2cd7b75a3e.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\775e8914-47d2-4336-a9b4-b6e2ef071158.png",
       "PackagePath": "staticwebassets\\assets\\img\\775e8914-47d2-4336-a9b4-b6e2ef071158.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\90b2fbb7-2f15-4cac-9d19-e3b4971cec74.png",
       "PackagePath": "staticwebassets\\assets\\img\\90b2fbb7-2f15-4cac-9d19-e3b4971cec74.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\94479621-d89f-4277-95fd-ce1420ffae5f.png",
+      "PackagePath": "staticwebassets\\assets\\img\\94479621-d89f-4277-95fd-ce1420ffae5f.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\a07f8828-ca5c-4828-b0a5-437465b66fdc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\a07f8828-ca5c-4828-b0a5-437465b66fdc.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\a2d68f79-46f4-42be-b260-4eaa3d673f34.png",
+      "PackagePath": "staticwebassets\\assets\\img\\a2d68f79-46f4-42be-b260-4eaa3d673f34.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\aa1a13e3-5b74-45c5-afc7-fcd09ce90e38.jpg",
@@ -453,6 +481,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\blog-3.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\c0362498-a952-43d5-95bc-f7705bee0083.png",
+      "PackagePath": "staticwebassets\\assets\\img\\c0362498-a952-43d5-95bc-f7705bee0083.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\c11bcefb-4bd6-43f4-9c3c-103cc1e6ae72.png",
       "PackagePath": "staticwebassets\\assets\\img\\c11bcefb-4bd6-43f4-9c3c-103cc1e6ae72.png"
     },
@@ -477,6 +509,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\e15c0200-6c65-4a6e-b46b-128abcc8a7eb.svg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\e191c63a-41d3-4725-a3b7-137db13d6fe2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\e191c63a-41d3-4725-a3b7-137db13d6fe2.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\e1c8985a-4a1b-48fc-b718-689e339faf13.png",
       "PackagePath": "staticwebassets\\assets\\img\\e1c8985a-4a1b-48fc-b718-689e339faf13.png"
     },
@@ -491,6 +527,14 @@
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\eeaf811d-bb7b-4bad-aeef-6d5c5ddd5b57.png",
       "PackagePath": "staticwebassets\\assets\\img\\eeaf811d-bb7b-4bad-aeef-6d5c5ddd5b57.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\ef07ee5d-921f-4680-9b46-2757412a6da3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\ef07ee5d-921f-4680-9b46-2757412a6da3.png"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\f5799a75-f8e7-4d03-a610-e740ca87b2d9.png",
+      "PackagePath": "staticwebassets\\assets\\img\\f5799a75-f8e7-4d03-a610-e740ca87b2d9.png"
     },
     {
       "Id": "C:\\Users\\ca.r214.08\\Desktop\\PesKitTask\\wwwroot\\assets\\img\\f84e8336-23d7-4699-94fe-ae72c12c2e9d.png",

@@ -46,7 +46,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
                 ModelState.AddModelError("Name", "Bu Tag movcuddur");
                 return View(vm);
             }
-            _context.Tags.AddAsync(tag);
+            await _context.Tags.AddAsync(tag);
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
@@ -58,38 +58,58 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         {
             if (id <= 0) return BadRequest();
 
-            Position position = await _context.Positions.FirstOrDefaultAsync(p => p.Id == id);
+            Tag? tag = await _context.Tags.FirstOrDefaultAsync(p => p.Id == id);
 
-            if (position is null) return NotFound();
+            if (tag is null) return NotFound();
 
-            UpdatePositionVM vm = new UpdatePositionVM()
+            UpdateTagVM vm = new UpdateTagVM()
             {
-                Name = position.Name,
+                Name = tag.Name,
             };
 
             return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(int id, UpdatePositionVM positionVM)
+        public async Task<IActionResult> Update(int id, UpdateTagVM tagvm)
         {
-            Position existed = await _context.Positions.FirstOrDefaultAsync(p => p.Id == id);
+            Tag existed = await _context.Tags.FirstOrDefaultAsync(p => p.Id == id);
             if (existed is null) return NotFound();
 
             if (!ModelState.IsValid)
             {
-                return View(positionVM);
+                return View(tagvm);
             }
 
-            bool result = _context.Projects.Any(c => c.Name == positionVM.Name);
+            bool result = _context.Tags.Any(c => c.Name == tagvm.Name);
             if (result)
             {
-                ModelState.AddModelError("Name", "Bele position artiq movcuddur");
+                ModelState.AddModelError("Name", "Bele tag artiq movcuddur");
             }
 
 
-            existed.Name = positionVM.Name;
+            existed.Name = tagvm.Name;
 
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        [Authorize(Roles = "Admin,Moderator")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            if (id <= 0) return BadRequest();
+            var tag = await _context.Tags.Include(c => c.BlogTags).ThenInclude(b=>b.Blog).FirstOrDefaultAsync(s => s.Id == id);
+            if (tag == null) return NotFound();
+
+            return View(tag);
+        }
+
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(Tag tag)
+        {
+            _context.Tags.Remove(tag);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

@@ -374,11 +374,15 @@ namespace PesKitTask.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("InstaLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LinkeednLink")
+                    b.Property<string>("LinkedinLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -567,9 +571,6 @@ namespace PesKitTask.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
@@ -591,8 +592,6 @@ namespace PesKitTask.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
 
                     b.HasIndex("OrderId");
 
@@ -675,7 +674,7 @@ namespace PesKitTask.Migrations
             modelBuilder.Entity("PesKitTask.Models.BasketItem", b =>
                 {
                     b.HasOne("PesKitTask.Models.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("BasketItems")
                         .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -768,10 +767,6 @@ namespace PesKitTask.Migrations
 
             modelBuilder.Entity("PesKitTask.ViewModel.BasketItemVM", b =>
                 {
-                    b.HasOne("PesKitTask.Models.AppUser", null)
-                        .WithMany("BasketItems")
-                        .HasForeignKey("AppUserId");
-
                     b.HasOne("PesKitTask.Models.Order", null)
                         .WithMany("BasketItems")
                         .HasForeignKey("OrderId");

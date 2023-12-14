@@ -10,7 +10,8 @@ namespace PesKitTask.Areas.PesKitAdmin.ViewModel
         [MaxLength(100, ErrorMessage = "Max length is 25")]
         public string Title { get; set; }
         public int CommentCount { get; set; }
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
+        public IFormFile? Photo { get; set; }
         public string Description { get; set; }
         public int AuthorId { get; set; }
         public List<int> TagIds { get; set; }

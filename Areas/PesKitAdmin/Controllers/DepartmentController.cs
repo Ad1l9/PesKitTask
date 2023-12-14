@@ -152,5 +152,17 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+
+        [Authorize(Roles = "Admin,Moderator")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            if (id <= 0) return BadRequest();
+            var existed = await _context.Departments.Include(d => d.Employees).FirstOrDefaultAsync(d => d.Id == id);
+            if (existed is null) return NotFound();
+            return View(existed);
+
+        }
     }
 }

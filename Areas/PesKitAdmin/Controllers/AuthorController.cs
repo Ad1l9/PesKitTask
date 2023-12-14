@@ -42,7 +42,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
                 ModelState.AddModelError("Name","Bu Username movcuddur");
                 return View(vm);
             }
-            _context.Authors.AddAsync(author);
+            await _context.Authors.AddAsync(author);
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
@@ -53,7 +53,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         {
             if (id <= 0) return BadRequest();
 
-            Author author = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
+            Author? author = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
 
             if (author is null) return NotFound();
 
@@ -68,7 +68,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(int id, UpdateAuthorVm authorVm)
         {
-            Author existed = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
+            Author? existed = await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
             if (existed is null) return NotFound();
 
             if (!ModelState.IsValid)
@@ -96,6 +96,18 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
             _context.Authors.Remove(author);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+
+
+        [Authorize(Roles = "Admin,Moderator")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            if (id <= 0) return BadRequest();
+            var author = await _context.Authors.Include(c => c.Blogs).FirstOrDefaultAsync(s => s.Id == id);
+            if (author == null) return NotFound();
+
+            return View(author);
         }
     }
 }

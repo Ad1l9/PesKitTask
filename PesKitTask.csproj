@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="Areas\PesKitAdmin\Data\" />
     <Folder Include="Areas\PesKitAdmin\Models\" />
+    <Folder Include="Areas\PesKitAdmin\Views\Employee\" />
   </ItemGroup>
 
   <ItemGroup>

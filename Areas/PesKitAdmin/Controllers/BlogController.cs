@@ -117,6 +117,7 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
                 Description = blog.Description,
                 CommentCount = blog.CommentCount,
                 AuthorId = blog.AuthorId,
+                ImageUrl=blog.ImageUrl,
                 TagIds = blog.BlogTags.Select(pt => pt.TagId).ToList(),
                 Tags = await _context.Tags.ToListAsync(),
                 Authors=await _context.Authors.ToListAsync(),   
@@ -125,9 +126,77 @@ namespace PesKitTask.Areas.PesKitAdmin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(int id,Position position)
+        public async Task<IActionResult> Update(int id, UpdateBlogVM vm)
         {
+            Blog existed = await _context.Blogs
+               .Include(b => b.BlogTags)
+               .Include(b => b.Author)
+               .FirstOrDefaultAsync(b => b.Id == id);
 
+            if (!ModelState.IsValid)
+            {
+                vm.Authors = await _context.Authors.ToListAsync();
+                vm.Tags = await _context.Tags.ToListAsync();
+                return View(vm);
+            }
+            if (vm.Photo is not null)
+            {
+                if (!vm.Photo.ValidateType())
+                {
+                    ModelState.AddModelError("Photo", "Wrong file type");
+                    return View();
+                }
+                if (!vm.Photo.ValidateSize(2 * 1024))
+                {
+                    ModelState.AddModelError("Photo", "It shouldn't exceed 2 mb");
+                    return View();
+                }
+
+                existed.ImageUrl = await vm.Photo.CreateFile(_env.WebRootPath, "assets", "img");
+            }
+
+
+
+            if (existed == null) return NotFound();
+            //bool result = await _context.Blogs.AnyAsync(c => c.AuthorId == vm.AuthorId);
+            //if (!result)
+            //{
+            //    vm.Authors = await _context.Authors.ToListAsync();
+            //    vm.Tags = await _context.Tags.ToListAsync();
+            //    return View(vm);
+            //}
+
+            foreach (int idT in vm.TagIds)
+            {
+                bool TagResult = await _context.Tags.AnyAsync(t => t.Id == idT);
+                if (!TagResult)
+                {
+                    vm.Authors = await _context.Authors.ToListAsync();
+                    vm.Tags = await _context.Tags.ToListAsync();
+                    ModelState.AddModelError("TagIds", "There is no such tag");
+                    return View(vm);
+                }
+            }
+
+            bool result = _context.Blogs.Any(c => c.Title == vm.Title && c.Id != id);
+            if (result)
+            {
+                vm.Authors = await _context.Authors.ToListAsync();
+                vm.Tags = await _context.Tags.ToListAsync();
+                ModelState.AddModelError("Name", "There is already such blog");
+                return View(vm);
+            }
+
+            existed.BlogTags.RemoveAll(pTag => !vm.TagIds.Contains(pTag.Id));
+
+            existed.BlogTags.AddRange(vm.TagIds.Where(tagId => !existed.BlogTags.Any(pt => pt.Id == tagId))
+                                 .Select(tagId => new BlogTag { TagId = tagId }));
+
+            existed.Title = vm.Title;
+            existed.Description = vm.Description;
+
+            existed.AuthorId = vm.AuthorId;
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

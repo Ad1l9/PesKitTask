@@ -1,0 +1,15 @@
+﻿@model Tag
+
+<div class="d-flex flex-row">
+	<div>
+		<h2>@Model.Name</h2>
+	</div>
+
+	<div class="m-3">
+		@foreach (BlogTag item in Model.BlogTags)
+		{
+			<p>@item.Blog.Title</p>
+		}
+	</div>
+</div>
+
